@@ -1,0 +1,23 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GRPC.Client";
+
+package GRPC;
+
+service DimAccount {
+	rpc ListAllDimAccount (GetAllDimAccountRequest) returns (GetAllDimAccountResponce);
+}
+
+
+message GetAllDimAccountRequest {}
+
+
+
+message DimAccountResponce {
+	int32  AccountKey = 1;
+	string AccountDescription = 2;
+}
+
+message GetAllDimAccountResponce {
+	repeated DimAccountResponce AllDim	 = 1;
+}
